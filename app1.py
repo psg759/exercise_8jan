@@ -8,7 +8,7 @@ reg=pickle.load(pickle_in)
 
 
 def predict_note_authentication(hour_s,pre_score):
-    prediction=classifier.predict([[hour_s,pre_score]])
+    prediction=reg.predict([[hour_s,pre_score]])
     print(prediction)
     return prediction
 
