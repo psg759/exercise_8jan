@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import streamlit as st 
 
-pickle_in = open("req_RF.pkl","rb")
+pickle_in = open("reg_RF.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 
