@@ -7,8 +7,8 @@ pickle_in = open("reg_RF.pkl","rb")
 reg=pickle.load(pickle_in)
 
 
-def predict_note_authentication(variance,skewness):
-    prediction=classifier.predict([[variance,skewness]])
+def predict_note_authentication(hour_s,pre_score):
+    prediction=classifier.predict([[hour_s,pre_score]])
     print(prediction)
     return prediction
 
@@ -24,7 +24,7 @@ def main():
     skewness = st.text_input("skewness","Type Here")
     result=""
     if st.button("Predict"):
-        result=predict_note_authentication(variance,skewness)
+        result=predict_note_authentication(hour_s,pre_score)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Lets Learn Python")
