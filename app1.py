@@ -9,7 +9,7 @@ import pickle
 import pandas as pd
 import streamlit as st 
 
-pickle_in = open("RF.pkl","rb")
+pickle_in = open("reg_RF.pkl","rb")
 rf=pickle.load(pickle_in)
 
 
