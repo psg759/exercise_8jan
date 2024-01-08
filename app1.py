@@ -24,7 +24,7 @@ def main():
     skewness = st.text_input("skewness","Type Here")
     result=""
     if st.button("Predict"):
-        result=predict_note_authentication(variance,skewness,curtosis,entropy)
+        result=predict_note_authentication(variance,skewness)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Lets Learn Python")
