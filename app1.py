@@ -4,11 +4,11 @@ import pandas as pd
 import streamlit as st 
 
 pickle_in = open("reg_RF.pkl","rb")
-classifier=pickle.load(pickle_in)
+reg=pickle.load(pickle_in)
 
 
-def predict_note_authentication(variance,skewness,curtosis,entropy):
-    prediction=classifier.predict([[variance,skewness,curtosis,entropy]])
+def predict_note_authentication(variance,skewness):
+    prediction=classifier.predict([[variance,skewness]])
     print(prediction)
     return prediction
 
@@ -22,8 +22,6 @@ def main():
     st.markdown(html_temp,unsafe_allow_html=True)
     variance = st.text_input("variance","Type Here")
     skewness = st.text_input("skewness","Type Here")
-    curtosis = st.text_input("curtosis","Type Here")
-    entropy = st.text_input("entropy","Type Here")
     result=""
     if st.button("Predict"):
         result=predict_note_authentication(variance,skewness,curtosis,entropy)
